@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: none
+      - name: PHP syntax check
+        run: find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
+      - name: Versions agree
+        run: |
+          HDR=$(grep -m1 -E '^[[:space:]]*\*[[:space:]]*Version:' scholar-citation-meta-scanner.php | awk '{print $NF}')
+          STABLE=$(grep -m1 -E '^Stable tag:' readme.txt | awk '{print $NF}')
+          echo "header=$HDR stable=$STABLE"
+          test "$HDR" = "$STABLE"
