@@ -1,12 +1,34 @@
 # Scholar Citation Meta Scanner
 
-Finds every DOI on a post or page and exposes the full citations to Zotero as a pick-list (COinS). Off by default, enabled per page.
+For pages that list many works: finds every DOI on the page and offers the full citations to Zotero as a pick-list (COinS). Off by default, enabled per page.
 
 [![Latest release](https://img.shields.io/github/v/release/dillonma/scholar-citation-meta-scanner)](https://github.com/dillonma/scholar-citation-meta-scanner/releases/latest) ![WordPress 5.9+](https://img.shields.io/badge/WordPress-5.9%2B-blue) ![PHP 7.4+](https://img.shields.io/badge/PHP-7.4%2B-777bb4) ![License GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-green)
 
-When this is switched on for a post or page, the plugin finds every DOI on it, looks each one up, and embeds the results as hidden COinS tags. The Zotero browser button then shows a folder icon. Clicking it opens a pick-list of every cited article, with full citations.
+## What it does
+**Scholar Citation Meta Scanner is for a page that lists many works.** Switch it on for a post or page, and it finds every DOI on it, looks each one up, and embeds the results as hidden COinS tags. The Zotero browser button then shows a folder icon; clicking it opens a pick-list of every work on the page, with full citations.
 
-It's off by default and switched on per post or page. It works on its own or alongside Scholar Citation Meta.
+For a page about **a single work**, where you want Google Scholar to index the page and link your PDF, use the companion plugin **[Scholar Citation Meta](https://github.com/dillonma/scholar-citation-meta)**. The Scanner works on its own or together with it.
+
+| | [Scholar Citation Meta](https://github.com/dillonma/scholar-citation-meta) | [Scholar Citation Meta Scanner](https://github.com/dillonma/scholar-citation-meta-scanner) |
+|---|---|---|
+| **Use it for** | A page about **one** work: a paper, chapter or book | A page that **lists many** works: a publications list, syllabus, reading list or bibliography |
+| **What it adds** | Highwire `citation_*` meta tags for that one work | Hidden COinS tags for every DOI found on the page |
+| **Google Scholar** | Tells Scholar the page is that work and where your PDF is | Not used by Scholar |
+| **Zotero browser button** | Saves the one work | Shows a folder icon with a pick-list of every work on the page |
+| **Where the details come from** | The DOI you enter (Crossref, DataCite, doi.org), plus optional BibTeX | Each DOI on the page, looked up the same way |
+| **Turned on** | Per post, by entering a DOI | Per post or page, with a checkbox (off by default) |
+
+### Examples
+- **One paper (Meta):** [The urban-tech feedback loop](https://dillonm.io/papers/the-urban-tech-feedback-loop/), a journal article in *Digital Geography & Society*. Google Scholar has what it needs to index the page as that article, and Zotero saves it as a journal article.
+- **One book chapter (Meta):** [Land for AI](https://dillonm.io/papers/land-for-ai/), a chapter in *The Inner World of Artificial Intelligence* (CRC Press). Zotero saves it as a book section with the book title and publisher.
+- **A list of works (Scanner):** [Papers + Writings](https://dillonm.io/papers/), a full publications list. Zotero offers every listed work with a DOI as a pick-list.
+- **Both together:** [Doing Critical GIS](https://dillonm.io/papers/doing-critical-gis/), a special-issue introduction with the issue's other articles listed below it. Meta describes the introduction itself for Google Scholar. The Scanner gives Zotero a pick-list with the introduction first, followed by the other articles.
+
+### Using both
+The two plugins are built to run side by side. On a page with both:
+- Google Scholar still reads Meta's tags, so the page is still described as its own work.
+- Zotero prefers the Scanner's list, and the page's own work is put first in it (you can turn this off per page).
+- If a DOI on a list page belongs to one of your own Meta posts, the Scanner uses that post's details, including any BibTeX fixes such as missing page numbers.
 
 ## Install
 1. Download `scholar-citation-meta-scanner-<version>.zip` from the [latest release](https://github.com/dillonma/scholar-citation-meta-scanner/releases/latest). Download the release asset, not GitHub's "Source code" archive.

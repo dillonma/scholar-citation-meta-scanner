@@ -12,6 +12,13 @@ Finds every DOI on a post or page and exposes the full citations to Zotero as a 
 
 == Description ==
 
+Use this plugin for a page that lists many works (a publications list, syllabus or bibliography). For a page about a single work, use the companion plugin Scholar Citation Meta (https://github.com/dillonma/scholar-citation-meta); the two work together.
+
+Examples:
+
+* A publications list: https://dillonm.io/papers/
+* With Scholar Citation Meta on the same page: https://dillonm.io/papers/doing-critical-gis/
+
 Finds every DOI on a post or page and exposes the full citations to Zotero as a pick-list (COinS). Off by default, enabled per page.
 
 Full documentation: https://github.com/dillonma/scholar-citation-meta-scanner
