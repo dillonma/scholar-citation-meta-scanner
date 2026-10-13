@@ -55,6 +55,7 @@ Versions before 1.4.0 don't have the updater, so upload 1.4.0 once by hand.
 3. The **Release** workflow checks that the tag matches both version numbers, builds `scholar-citation-meta-scanner-<version>.zip`, and attaches it to the release. Sites running the plugin will then see the update.
 
 ## Changelog
+- **1.4.1**: Update checks fall back to github.com when GitHub's API is rate-limited (common on shared hosting).
 - **1.4.0**: Updates from GitHub Releases: new versions appear on the Plugins screen like any other plugin.
 - **1.3.0**: Handles publisher links with a title slug after the DOI; treats tags and line breaks as spaces so text is not glued onto a DOI; keeps a chapter DOI over its book DOI.
 - **1.2.0**: Checks the DataCite API directly when Crossref has no record, before falling back to doi.org.

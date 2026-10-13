@@ -4,7 +4,7 @@ Tags: zotero, doi, coins, citation, crossref
 Requires at least: 5.9
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ Full documentation: https://github.com/dillonma/scholar-citation-meta-scanner
 Later versions update from GitHub Releases through the normal WordPress Updates screen.
 
 == Changelog ==
+
+= 1.4.1 =
+* Update checks fall back to github.com when GitHub's API is rate-limited (common on shared hosting).
 
 = 1.4.0 =
 * Updates from GitHub Releases: new versions appear on the Plugins screen like any other plugin.
